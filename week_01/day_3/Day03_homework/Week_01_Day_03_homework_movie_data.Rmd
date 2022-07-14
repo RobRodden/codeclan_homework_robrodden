@@ -1,0 +1,82 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+```{r}
+library(tidyverse)
+```
+
+```{r}
+movie_data <- read.csv("data/movies.csv")
+
+view(movie_data)
+
+movie_data %>% 
+  select(homepage) %>% 
+  group_by(homepage) %>% 
+  summarise(count = n()) %>% 
+  arrange(desc(count))
+```
+```{r}
+movies_selected <- select(movie_data, title, runtime, budget)
+view(movies_selected)
+
+movie_selected <- select(movie_data, title, runtime, budget) 
+  
+movies_selected %>% 
+  select(title, runtime, budget) %>% 
+  group_by(title, runtime, budget) %>% 
+  summarise(movie_selected, count = is.na(NA)) %>% 
+  arrange(desc(count))
+  
+```
+
+```{r}
+movies_selected %>% 
+  summarise(count = sum(is.na(title)))
+
+movies_selected %>% 
+  summarise(count = sum(is.na(runtime)))
+
+movies_selected %>% 
+  summarise(count = sum(is.na(budget)))
+
+movies_selected %>% 
+  summarise(count = sum(is.na(movies_selected)))
+
+filter(movies_selected, runtime == "0")
+```
+
+```{r}
+movies_runtime <- movies_selected %>%
+  mutate(runtime = na_if(runtime, "0"))
+filter(movies_runtime, runtime == "0")
+```
+
+```{r}
+movies_imputed <- movies_selected %>%
+    mutate(runtime = coalesce(runtime, median(runtime, na.rm = TRUE)))
+
+movies_imputed %>% 
+  summarise(count = sum(is.na(runtime)))
+```
+```{r}
+movies_imputed %>% 
+  arrange(desc(runtime)) %>% 
+  slice_max(runtime, n = 10)
+```
+
+```{r}
+movies_imputed %>% 
+  arrange(desc(runtime)) %>% 
+  slice_min(runtime, n = 10)
+```
+
+```{r}
+movies_imputed <- movies_imputed %>% 
+  select(budget) %>% 
+  mutate(
+    budget_inc_median = if_else(budget >= 100, budget, median(budget)))
+movies_imputed
+```
+

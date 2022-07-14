@@ -1,0 +1,3 @@
+"0","movie_data <- read.csv(""data/movies.csv"")"
+"0",""
+"0","movie_data"
