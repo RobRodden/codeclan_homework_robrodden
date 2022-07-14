@@ -1,0 +1,102 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+```{r}
+library(tidyverse)
+```
+
+```{r}
+movie_data <- read.csv("data/movies.csv")
+
+# Here is where I viewed the data, important for me to visualise its current layout
+view(movie_data)
+
+# I had done Q1 but think I've typed over it - oops!
+
+# this was me trying to understand how many website homepages were missing - I have a feeling that this could be simplified
+movie_data %>% 
+  select(homepage) %>% 
+  group_by(homepage) %>% 
+  summarise(count = n()) %>% 
+  arrange(desc(count))
+```
+```{r}
+# I hope I'm answering question 2 here - will need to check
+movies_selected <- select(movie_data, title, runtime, budget)
+view(movies_selected)
+
+movie_selected <- select(movie_data, title, runtime, budget) 
+
+# this is the actual answer 
+movies_selected %>% 
+  select(title, runtime, budget) %>% 
+  group_by(title, runtime, budget) %>% 
+  summarise(movie_selected, count = is.na(NA)) %>% 
+  arrange(desc(count))
+  
+```
+
+```{r}
+movies_selected %>% 
+  summarise(count = sum(is.na(title)))
+
+movies_selected %>% 
+  summarise(count = sum(is.na(runtime)))
+
+movies_selected %>% 
+  summarise(count = sum(is.na(budget)))
+
+movies_selected %>% 
+  summarise(count = sum(is.na(movies_selected)))
+
+movies_selected %>% 
+  summarise(na_runtime = sum(is.na(runtime)),
+            na_title = sum(is.na(title)),
+            na_budget = sum(is.na(budget)))
+
+filter(movies_selected, runtime == "0")
+```
+
+```{r}
+movies_runtime <- movies_selected %>%
+  mutate(runtime = na_if(runtime, "0"))
+filter(movies_runtime, runtime == "0")
+```
+
+```{r}
+movies_imputed <- movies_selected %>%
+    mutate(runtime = coalesce(runtime, median(runtime, na.rm = TRUE)))
+
+movies_imputed %>% 
+  summarise(count = sum(is.na(runtime)))
+```
+```{r}
+movies_imputed %>% 
+  arrange(desc(runtime)) %>% 
+  slice_max(runtime, n = 10)
+```
+
+```{r}
+movies_imputed %>% 
+  arrange(desc(runtime)) %>% 
+  slice_min(runtime, n = 10)
+```
+
+```{r}
+movies_imputed <- movies_imputed %>% 
+  select(budget) %>% 
+  mutate(
+    budget_inc_median = if_else(budget >= 100, budget, median(budget)))
+movies_imputed
+```
+
+```{r}
+movies_selected
+
+movies_selected %>% 
+  group_by(runtime) %>% 
+  summarise(across(title:budget)) %>% 
+  select(runtime)
+```
+
