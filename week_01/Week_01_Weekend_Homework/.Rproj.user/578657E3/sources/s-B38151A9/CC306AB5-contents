@@ -1,0 +1,46 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+# misc observations - the first column with no header and very wide is starting to annoy me!
+
+```{r}
+# loading data - this time I've added the data to the same project folder but I did also try doing by direction to the file location
+books_data <- read.csv("data/books.csv")
+
+library(tidyverse)
+library(skimr)
+skim(books_data) # need to check this but looks like there are 6 character columns and 7 numeric.  Says no Group variables, not sure what this means.
+```
+
+```{r}
+# In this section I'm going to check various meta data
+nrow(books_data) # there are 11,123
+ncol(books_data) # there are 13
+dim(books_data) # returned the info I got above
+names(books_data) # brings back the column headings - curious as to what the difference between "rowid" and "bookID" plus "isbn" and "isbn13"?  And what is "language_code" or "text_reviews_count"?  Do we need "rowID"? (remember how important it was in previous work).
+head(books_data)
+head(books_data, 10)
+tail(books_data, 10)
+glimpse(books_data)
+view(books_data)
+str(books_data)
+
+publishers_listed <- group_by(books_data, publisher)
+summarise(publishers_listed, character_count = n()) # seems to be a lot of publishers with very similar names or upper vs lower case - are they typos etc  Also is this in order?
+
+books_data %>% 
+  group_by(publisher) %>% 
+summarise(
+  count = n()
+) %>% 
+arrange(count)
+
+```
+
+```{r}
+# should look to find any missing data
+mutate(books_data, publisher_missing = is.na(publisher))
+```
+

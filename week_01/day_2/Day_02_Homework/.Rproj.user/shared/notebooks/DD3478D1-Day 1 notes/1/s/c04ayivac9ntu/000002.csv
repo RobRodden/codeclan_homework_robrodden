@@ -1,0 +1,15 @@
+"0","```r
+library(tidyverse)
+library(CodeClanData)
+```"
+"1","
+Attaching package: ‘CodeClanData’
+
+The following object is masked from ‘package:dplyr’:
+
+    starwars
+
+The following object is masked from ‘package:tidyr’:
+
+    population
+"

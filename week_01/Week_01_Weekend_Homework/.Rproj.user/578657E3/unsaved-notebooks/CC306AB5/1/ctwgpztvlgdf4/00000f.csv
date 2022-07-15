@@ -1,0 +1,24 @@
+"0","skim(books_data) # need to check this but looks like there are 6 character columns and 7 numeric.  Says no Group variables, not sure what this means.
+"
+"1","── Data Summary ────────────────────────
+"
+"1","                           Values    
+"
+"1","Name                       books_data
+"
+"1","Number of rows             11123     
+"
+"1","Number of columns          13        
+"
+"1","_______________________              
+"
+"1","Column type frequency:               
+"
+"1","  character                6         
+"
+"1","  numeric                  7         
+"
+"1","________________________             
+"
+"1","Group variables            None      
+"
