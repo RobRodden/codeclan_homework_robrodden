@@ -1,0 +1,7 @@
+"0","```r
+drinks_content %>% 
+  filter(!is.na(Beverage_prep)) %>% 
+  group_by(Beverage_prep) %>% 
+  summarise(Calories = mean(Calories)) %>% 
+  arrange(desc(Calories))
+```"

@@ -1,0 +1,14 @@
+"0","avg_calories <- drink_calories %>% 
+  summarise(mean_calories = mean(Calories)) %>% 
+  pull()
+
+avg_calories
+"
+"1","[1]"
+"1"," 193.8719"
+"1","
+"
+"0","above_avg_calories <- average_bev_prep %>% "
+"0","  filter(mean_cals >= avg_calories)"
+"0",""
+"0","above_avg_calories"

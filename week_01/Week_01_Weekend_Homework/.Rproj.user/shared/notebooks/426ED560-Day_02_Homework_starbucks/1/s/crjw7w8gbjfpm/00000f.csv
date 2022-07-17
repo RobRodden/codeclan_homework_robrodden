@@ -1,0 +1,9 @@
+"0","drinks_content %>% "
+"0","  filter(!is.na(Calories)) %>%"
+"0","  filter(Calories > 282.2222) %>% "
+"0","  group_by(Beverage_prep, Beverage_category, Beverage) %>% "
+"0","  summarise(Calories = mean(Calories)) %>% "
+"0","  arrange(desc(Calories))"
+"1","[38;5;232m`summarise()` has grouped output by 'Beverage_prep', 'Beverage_category'. You can override using the `.groups`
+argument.[39m
+"

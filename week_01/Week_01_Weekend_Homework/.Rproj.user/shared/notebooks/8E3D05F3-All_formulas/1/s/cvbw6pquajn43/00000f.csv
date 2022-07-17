@@ -1,0 +1,6 @@
+"0","have_died <- filter(all_deaths, !is.na(book_of_death))
+"
+"2","Error: unexpected symbol in:
+""have_died <- filter(all_deaths, !is.na(book_of_death)
+have_died""
+"

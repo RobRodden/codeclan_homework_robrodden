@@ -1,0 +1,33 @@
+"0","```r
+unique(Inc_Cal_Diff[c(\"Beverage_category\")])
+just_coffee <- filter(drinks_content, Beverage_category == \"Coffee\")
+just_CED <- filter(drinks_content, Beverage_category == \"Classic Espresso Drinks\")
+just_SED <- filter(drinks_content, Beverage_category == \"Signature Espresso Drinks\")
+just_TTD <- filter(drinks_content, Beverage_category == \"Tazo® Tea Drinks\")
+just_SIB <- filter(drinks_content, Beverage_category == \"Shaken Iced Beverages\")
+just_Smootihies <- filter(drinks_content, Beverage_category == \"Smoothies\")
+just_FBC <- filter(drinks_content, Beverage_category == \"Frappuccino® Blended Coffee\")
+just_FLBC <- filter(drinks_content, Beverage_category == \"Frappuccino® Light Blended Coffee\")
+just_FBCr <- filter(drinks_content, Beverage_category == \"Frappuccino® Blended Crème\")
+
+Mean_just_coffee <- summarise(just_coffee,
+          avg_coffee_cal = mean(Calories, na.rm = T))
+Mean_just_CED <- summarise(just_CED,
+          avg_CED = mean(Calories, na.rm = T))
+Mean_just_SED <- summarise(just_SED,
+          avg_SED_cal = mean(Calories, na.rm = T))
+Mean_just_TTD <- summarise(just_TTD,
+          avg_TTD_cal = mean(Calories, na.rm = T))
+Mean_just_SIB <- summarise(just_SIB,
+          avg_SIB = mean(Calories, na.rm = T))
+Mean_just_Smoothies <- summarise(just_Smootihies,
+          avg_Smoothies_cal = mean(Calories, na.rm = T))
+Mean_just_FBC <- summarise(just_FBC,
+          avg_FBC_cal = mean(Calories, na.rm = T))
+Mean_just_FLBC <- summarise(just_FLBC,
+          avg_FLBC = mean(Calories, na.rm = T))
+Mean_just_FBCr <- summarise(just_FBCr,
+          avg_FBCr_cal = mean(Calories, na.rm = T))
+BevCatComb <- c(Mean_just_coffee, Mean_just_CED, Mean_just_SED, Mean_just_TTD, Mean_just_SIB, Mean_just_Smoothies, Mean_just_FBC, Mean_just_FLBC, Mean_just_FBCr)
+BevCatComb
+```"

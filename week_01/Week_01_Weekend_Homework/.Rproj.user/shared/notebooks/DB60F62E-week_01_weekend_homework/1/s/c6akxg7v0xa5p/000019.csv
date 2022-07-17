@@ -1,0 +1,8 @@
+"0","# this section gives you the top 5 authors"
+"0","books_data %>% "
+"0","  group_by(authors) %>% "
+"0","summarise("
+"0","  count = n()"
+"0",") %>% "
+"0","arrange(desc(count)) %>% "
+"0","  head(5)"

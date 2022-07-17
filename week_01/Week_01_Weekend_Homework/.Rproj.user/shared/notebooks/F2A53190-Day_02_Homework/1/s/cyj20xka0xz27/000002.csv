@@ -1,0 +1,9 @@
+"0","```r
+dim(drinks_content)
+summary(drinks_content)
+head(drinks_content)
+tail(drinks_content)
+nrow(drinks_content)
+names(drinks_content)
+glimpse(drinks_content)
+```"
