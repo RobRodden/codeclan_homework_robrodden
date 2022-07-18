@@ -108,6 +108,22 @@ hat_observations_combined_date_formats
 ```
 
 ```{r}
+# 2 Extension
 
+sparse_dataset <- left_join(cc_details_joined_to_customer_details, fraud_details_joined_to_transaction_details, by = c("Card_Number" =  "Credit_Card_ID"))
+
+# I used this to work out with column had relevant missing data ie "Fraud_Flag"
+
+sparse_dataset2 <- removing_na <- filter(sparse_dataset, !is.na(Fraud_Flag)) %>% 
+
+sparse_dataset2
+
+
+```
+```{r}
+# 2.2 tidyr
+
+exam_scores <- read_csv("data/exam_scores.csv")
+view(exam_scores)
 ```
 
