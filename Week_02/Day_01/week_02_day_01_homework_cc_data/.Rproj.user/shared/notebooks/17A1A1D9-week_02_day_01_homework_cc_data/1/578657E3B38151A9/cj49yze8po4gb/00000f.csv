@@ -1,0 +1,12 @@
+"0","exam_scores <- read_csv(""data/exam_scores.csv"")
+"
+"1","[1mRows: [22m[34m200[39m [1mColumns: [22m[34m11[39m
+"
+"1","[36m──[39m [1mColumn specification[22m [36m──────────────────────────────────────────────────────────────────────────────────────────[39m
+[1mDelimiter:[22m "",""
+[32mdbl[39m (11): id, exam_Q1, exam_Q2, exam_Q3, exam_Q4, exam_Q5, exam_Q6, exam_Q7, exam_Q8, exam_Q9, exam_Q10
+"
+"1","
+[36mℹ[39m Use `spec()` to retrieve the full column specification for this data.
+[36mℹ[39m Specify the column types or set `show_col_types = FALSE` to quiet this message.
+"
