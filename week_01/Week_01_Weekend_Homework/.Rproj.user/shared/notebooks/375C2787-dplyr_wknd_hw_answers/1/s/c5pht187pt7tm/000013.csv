@@ -1,0 +1,9 @@
+"0",""
+"0","penguin_names <- c(""Penguin Books"", ""Penguin Classics"")"
+"0",""
+"0","books %>% "
+"0","  filter(publisher %in% penguin_names) %>%"
+"0","  nrow()"
+"2","Error in filter(., publisher %in% penguin_names) : 
+  object 'books' not found
+"

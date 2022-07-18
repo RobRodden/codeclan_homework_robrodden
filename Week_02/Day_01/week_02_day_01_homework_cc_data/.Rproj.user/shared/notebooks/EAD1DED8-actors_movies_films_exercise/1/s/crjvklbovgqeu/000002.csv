@@ -1,0 +1,13 @@
+"0","```r
+movies <- read_csv(\"movies.csv\")
+
+```"
+"1","Rows: 36 Columns: 4
+── Column specification ───────────────────────────────────────────────────────────────────────────────────────────
+Delimiter: \",\"
+chr (2): name, rank
+dbl (2): id, year
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+"

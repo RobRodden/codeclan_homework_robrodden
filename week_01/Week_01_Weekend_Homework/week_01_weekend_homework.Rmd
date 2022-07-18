@@ -158,6 +158,7 @@ books_data_merged_eng_lang <- books_data %>%
 arrange(desc(count))
 
 books_data_merged_eng_lang
+
 ```
 
 ```{r}
@@ -171,5 +172,11 @@ books_data %>%
 
 ```{r}
 names(books_data)
+```
+
+```{r}
+library(tidyverse)
+library(anytime)
+?anytime(publication_date)
 ```
 

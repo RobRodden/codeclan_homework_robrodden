@@ -204,8 +204,70 @@ all_deaths %>%
 all_deaths %>% 
   mutate(death_later_than_average = year_of_death > average_year_of_death$average_value)
 
-```
+# Dplyr Homework with answers
+# file:///Users/robrodden/Documents/Codeclan/dr16_classnotes/week_01/day_2/5_homework_dplyr/dplyr_homework_with_answers.html
+# let's check if there are any missing values
+drinks_content %>%
+  select(Beverage_category, Beverage, Beverage_prep, Calories) %>%
+  filter(is.na(Calories)) %>%
+  summarise(count_of_missing_calories = n())
 
+# create a new variable 
+drink_calories <- drinks_content %>%
+  mutate(calorie_diff = Calories - 135)
+
+most_calories <- drink_calories %>%
+  group_by(Beverage_category) %>%
+  summarise(mean_calories = mean(Calories)) %>%
+  arrange(desc(mean_calories)) %>%
+  head(3)
+
+most_calories
+
+least_calories <- drink_calories %>%
+  ?group_by(Beverage_category) %>%
+  summarise(mean_calories = mean(Calories)) %>%
+  arrange(mean_calories)%>%
+  head(3)
+
+least_calories
+
+# work out the mean calories for each beverage prep 
+average_bev_prep <- drink_calories %>%
+  group_by(Beverage_prep) %>%
+  summarise(mean_cals = mean(Calories)) %>%
+  arrange(desc(mean_cals))
+
+average_bev_prep
+
+# find the average calories - and we need to use pull() to be able to use the number in calculations
+avg_calories <- drink_calories %>%
+                  summarise(mean_calories = mean(Calories)) %>%
+                  pull()
+
+avg_calories
+
+# find which prep types have above average calories
+above_avg_calories <- average_bev_prep %>%
+  filter(mean_cals >= avg_calories)
+
+above_avg_calories
+
+# we also could have done it using mutate and then filter 
+
+average_bev_prep %>%
+  mutate(is_greater_than_avg = mean_cals >= avg_calories) %>%
+  filter(is_greater_than_avg == TRUE)
+
+head(drink_calories)
+
+drink_calories %>%
+  group_by(Beverage_category, Beverage, Beverage_prep) %>%
+  summarise(min_calories = min(Calories)) %>%
+  arrange(min_calories) %>%
+  head(1)
+
+```
 
 
 ```{r}
@@ -217,8 +279,18 @@ help(package = "dplyr")
 
 
 
-
 ```{r}
+```{r}
+# Q: What are the top 10 books with the highest average rating (with more than
+# 10,000 ratings)?
 
+top_10_books <- books %>%
+  select(title, average_rating, ratings_count) %>% 
+  filter(ratings_count >= 10000) %>% 
+  slice_max(average_rating, n = 10, with_ties = FALSE)
+
+top_10_books
+
+```
 ```
 

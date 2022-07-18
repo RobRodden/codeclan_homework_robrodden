@@ -1,0 +1,7 @@
+"0","```r
+view(actors)
+view(movies)
+view(roles)
+
+actors
+```"
