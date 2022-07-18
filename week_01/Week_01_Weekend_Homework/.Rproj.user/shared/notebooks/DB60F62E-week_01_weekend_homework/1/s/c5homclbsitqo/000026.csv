@@ -1,0 +1,8 @@
+"0","books_data %>% "
+"0","  filter(ratings_count >= 15000) %>% "
+"0","  select(title, authors, average_rating, ratings_count) %>% "
+"0","  group_by(title, authors, average_rating) %>% "
+"0","  summarise(count = n()) %>% "
+"0","  arrange(desc(average_rating))"
+"1","[38;5;232m`summarise()` has grouped output by 'title', 'authors'. You can override using the `.groups` argument.[39m
+"

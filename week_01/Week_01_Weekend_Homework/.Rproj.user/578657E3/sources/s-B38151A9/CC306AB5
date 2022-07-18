@@ -3,7 +3,7 @@
     "path": "~/Documents/Codeclan/codeclan_homework_robrodden/week_01/Week_01_Weekend_Homework/week_01_weekend_homework.Rmd",
     "project_path": "week_01_weekend_homework.Rmd",
     "type": "r_markdown",
-    "hash": "2331906686",
+    "hash": "1678907440",
     "contents": "",
     "dirty": false,
     "created": 1657895445218.0,
@@ -14,15 +14,15 @@
         "chunk_output_type": "inline",
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "148,136",
-        "scrollLine": "144"
+        "cursorPosition": "164,25",
+        "scrollLine": "161"
     },
     "folds": "",
-    "lastKnownWriteTime": 1658087489,
+    "lastKnownWriteTime": 1658131695,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1658087490007,
+    "last_content_update": 1658131695776,
     "read_only": false,
     "read_only_alternatives": []
 }

@@ -161,6 +161,15 @@ books_data_merged_eng_lang
 ```
 
 ```{r}
+books_data %>% 
+  filter(ratings_count >= 15000) %>% 
+  select(title, authors, average_rating, ratings_count) %>% 
+  group_by(title, authors, average_rating) %>% 
+  summarise(count = n()) %>% 
+  arrange(desc(average_rating))
+```
+
+```{r}
 names(books_data)
 ```
 
