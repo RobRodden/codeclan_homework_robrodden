@@ -116,7 +116,7 @@ sparse_dataset <- left_join(cc_details_joined_to_customer_details, fraud_details
 sparse_dataset %>%
   summarise(across(.fns = ~ sum(is.na(.x))))
 
-sparse_dataset2 <- removing_na <- filter(sparse_dataset, !is.na(Fraud_Flag)) %>% 
+sparse_dataset2 <- filter(sparse_dataset, !is.na(Fraud_Flag)) %>% 
 0
 sparse_dataset2
 
