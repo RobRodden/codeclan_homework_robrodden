@@ -113,6 +113,8 @@ hat_observations_combined_date_formats
 sparse_dataset <- left_join(cc_details_joined_to_customer_details, fraud_details_joined_to_transaction_details, by = c("Card_Number" =  "Credit_Card_ID"))
 
 # I used this to work out with column had relevant missing data ie "Fraud_Flag"
+sparse_dataset %>%
+  summarise(across(.fns = ~ sum(is.na(.x))))
 
 sparse_dataset2 <- removing_na <- filter(sparse_dataset, !is.na(Fraud_Flag)) %>% 
 
@@ -125,5 +127,12 @@ sparse_dataset2
 
 exam_scores <- read_csv("data/exam_scores.csv")
 view(exam_scores)
+
+exam_scores %>% 
+  pivot_longer(cols = c("exam_Q1":"exam_Q10"),
+               names_to = "exam_question",
+               values_to = "score")
+                        
+names(exam_scores)                        
 ```
 
