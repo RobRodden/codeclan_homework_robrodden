@@ -107,8 +107,12 @@ Q6_joining_cctweets_to_ccinfo
 ```
 
 ```{r}
-codeclan_hashtags <- select(Q6_joining_cctweets_to_ccinfo, "tweet_id", "hashtags")
+# Q7 
+Q7_new_tibble_contain_cclanHashtags_tweetid_lowercase <- select(Q6_joining_cctweets_to_ccinfo, "tweet_id", "hashtags") %>% 
+  mutate(hashtags = tolower(hashtags))
+
 codeclan_hashtags
+
 ```
 
 ```{r}
@@ -119,8 +123,8 @@ codeclan_hashtags %>%
 
 ```{r}
 # Q9
-codeclan_hashtags %>% 
-  str_extract_all("(?i)edinburgh")%>% 
+codeclan_hashtags %>%
+  str_extract_all("(?i)edinburgh") %>% 
   flatten_chr() %>% 
 length()
 ```

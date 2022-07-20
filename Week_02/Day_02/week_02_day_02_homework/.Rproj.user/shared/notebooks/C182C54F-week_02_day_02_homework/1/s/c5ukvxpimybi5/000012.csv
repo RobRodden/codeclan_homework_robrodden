@@ -1,2 +1,0 @@
-"0","codeclan_hashtags <- select(Q6_joining_cctweets_to_ccinfo, ""tweet_id"", ""hashtags"")"
-"0","codeclan_hashtags"
