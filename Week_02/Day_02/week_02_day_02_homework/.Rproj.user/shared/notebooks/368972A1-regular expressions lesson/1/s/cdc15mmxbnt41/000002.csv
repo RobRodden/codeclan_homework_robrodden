@@ -1,0 +1,6 @@
+"0","```r
+pattern <- \"CodeClan\"
+
+first_string %>% 
+  str_detect(pattern)
+```"

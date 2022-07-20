@@ -1,0 +1,7 @@
+"0","```r
+pattern <- \"[a-z0-9]+@[a-z]+\"
+
+strings %>% 
+  str_detect(pattern)
+
+```"

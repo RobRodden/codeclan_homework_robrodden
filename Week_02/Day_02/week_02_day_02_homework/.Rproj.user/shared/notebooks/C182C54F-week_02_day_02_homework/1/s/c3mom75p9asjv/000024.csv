@@ -1,0 +1,7 @@
+"0","# Q5"
+"0","# library(stringr) tried and failed to use this!"
+"0","Q5_mean_num_characters_of_tweets <- code_clan_tweets %>%"
+"0","  select(text) %>%"
+"0","  mutate(text, character_count = n()) "
+"0","  # str_length(text)"
+"0","summarise(Q5_mean_num_characters_of_tweets, character_count = n())"

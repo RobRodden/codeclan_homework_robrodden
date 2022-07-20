@@ -1,0 +1,6 @@
+"0","whole_text %>% "
+"0","  str_detect(""(?i)thought police"")"
+"1","[1]"
+"1"," TRUE"
+"1","
+"

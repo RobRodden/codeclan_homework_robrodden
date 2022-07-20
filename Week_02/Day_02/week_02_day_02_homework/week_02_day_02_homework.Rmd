@@ -1,0 +1,131 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+# loading any relevant packages
+
+library(tidyverse)
+library(janitor)
+library(dplyr)
+```
+
+```{r}
+# Q1
+## reading, cleaning and viewing
+
+code_clan_tweets <- read_csv("data/code_clan_tweets.csv") %>% clean_names()
+view(code_clan_tweets)
+```
+
+```{r}
+# Q1 - continued.
+
+glimpse(code_clan_tweets)
+
+```
+
+```{r}
+# Q2
+
+Q2_total_number_of_favourites_exc_quoted <- code_clan_tweets %>% 
+  select(is_quote, favorite_count) %>%
+  filter(is_quote == FALSE) %>% 
+#  group_by(is_qoute = FALSE) %>% 
+  summarise(sum(favorite_count))
+Q2_total_number_of_favourites_exc_quoted
+```
+
+```{r}
+# Q3
+
+Q3_mean_num_of_retweets_exc_quoted_by_source <- code_clan_tweets %>% 
+select(source, is_quote, retweet_count) %>% 
+  filter(is_quote == FALSE) %>% 
+# class(retweet_count) added this as i got an error, googled error and realised I'd forgot the pipe at the end of l-42
+# names(code_clan_tweets) as per l-45
+  group_by(source) %>% 
+  summarise(mean(retweet_count))
+
+Q3_mean_num_of_retweets_exc_quoted_by_source
+```
+
+```{r}
+# Q4
+
+
+Q4_tot_num_favourit_count_by_media_arr_most_least <- code_clan_tweets %>%
+  select(favorite_count, media_type) %>% 
+  group_by(media_type) %>%
+  summarise(count = sum(favorite_count)) %>% 
+  arrange(desc(count))
+  
+Q4_tot_num_favourit_count_by_media_arr_most_least 
+
+#replace(media_type, is.na(media_type), "text")
+  #replace_na(media_type, "text") %>% 
+# <- replace_na('text') %>%
+  
+# Q4_tot_num_favourit_count_by_media_arr_most_least
+```
+
+```{r}
+# Q5
+# library(stringr) tried and failed to use this!
+Q5_mean_num_characters_of_tweets <- code_clan_tweets %>%
+  select(text) %>%
+  mutate(text, character_count = n()) 
+  # str_length(text)
+summarise(Q5_mean_num_characters_of_tweets, character_count = n())
+```
+
+```{r}
+# Q6 
+code_clan_info <- read_csv("data/code_clan_info.csv") %>% clean_names() %>% 
+glimpse()
+view(code_clan_info)
+
+```
+
+```{r}
+# a) listing the columns to make it easier to identify how to join
+names(code_clan_info)
+```
+
+```{r}
+# b) as l-92 above
+names(code_clan_tweets)
+
+# looks like tweet_id would be a good one to use to join tables 
+```
+
+```{r}
+Q6_joining_cctweets_to_ccinfo <- left_join(code_clan_tweets, code_clan_info, "tweet_id")
+
+Q6_joining_cctweets_to_ccinfo
+```
+
+```{r}
+codeclan_hashtags <- select(Q6_joining_cctweets_to_ccinfo, "tweet_id", "hashtags")
+codeclan_hashtags
+```
+
+```{r}
+# Q8
+codeclan_hashtags %>% 
+  str_detect("c\\(")
+```
+
+```{r}
+# Q9
+codeclan_hashtags %>% 
+  str_extract_all("(?i)edinburgh")%>% 
+  flatten_chr() %>% 
+length()
+```
+
+```{r}
+
+```
+

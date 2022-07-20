@@ -1,0 +1,8 @@
+"0","```r
+patternrr1 <- \"[A-Z,[:punct:]]\"
+
+my_vector1 %>% 
+  str_extract(patternrr1)
+```"
+"1","[1] \"C\" \"A\" \"M\" \"I\"
+"

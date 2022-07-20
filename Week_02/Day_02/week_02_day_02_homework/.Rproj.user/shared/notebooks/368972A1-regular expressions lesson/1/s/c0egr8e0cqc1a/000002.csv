@@ -1,0 +1,11 @@
+"0","```r
+pattern <- \"i{3,}\"
+
+strings %>% 
+  str_detect(pattern)
+
+pattern <- \"i{3,6}\"
+
+strings %>% 
+  str_detect(pattern)
+```"

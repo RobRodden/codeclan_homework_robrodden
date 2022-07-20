@@ -1,0 +1,1 @@
+{"frames":[{"func":"whole_text %>% str_extract_all(\"(?i)big brother\") %>% flatten_chr()","file":"","line_number":0,"end_line_number":0,"character_number":0,"end_character_number":0}],"message":"Error in flatten_chr(.) : could not find function \"flatten_chr\"\n"}

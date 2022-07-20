@@ -1,0 +1,18 @@
+"0","```r
+pattern<- \"^[a-z]+[a-zA-z]*\"
+
+test_strings %>% 
+  str_extract_all(pattern)
+```"
+"1","[[1]]
+[1] \"abc\"
+
+[[2]]
+character(0)
+
+[[3]]
+[1] \"abC\"
+
+[[4]]
+[1] \"s\"
+"

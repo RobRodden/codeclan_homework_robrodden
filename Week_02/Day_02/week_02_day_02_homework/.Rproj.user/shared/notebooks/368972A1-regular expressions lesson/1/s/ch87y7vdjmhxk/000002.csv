@@ -1,0 +1,21 @@
+"0","```r
+
+strings <- c(\"We're having great fun learning about data analysis at CodeClan!\",
+             \"CodeClan is at 37 Castle Terrace in Edinburgh and ClockWise in Glasgow\",
+             \"Our cohort code starts with DE or DR\",
+             \"You get a great view of the castle or the national conservatoire from just outside CodeClan's door\"
+)
+
+# Any string mentioning CodeClan
+strings %>% 
+  str_detect(\"CodeClan\")
+  
+# Any string containing two consecutive capital letters
+strings %>% 
+  str_detect(\"[A-Z][A-Z]\")
+
+# Any string not including the word \"castle\" or \"Castle\"
+strings %>% 
+  str_detect(\"(?i)castle\", negate = TRUE)
+
+```"

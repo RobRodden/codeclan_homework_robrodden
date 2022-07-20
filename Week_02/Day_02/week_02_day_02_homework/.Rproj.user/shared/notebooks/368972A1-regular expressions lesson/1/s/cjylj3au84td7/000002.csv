@@ -1,0 +1,5 @@
+"0","```r
+codeclan_pattern <- \"CodeClan\"
+  string_exercise %>%
+  str_detect(codeclan_pattern)
+```"

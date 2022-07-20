@@ -1,0 +1,18 @@
+"0","```r
+pattern1 <- \"[A-Z]{1}[a-z]+\"
+
+my_vector1 %>%
+  str_extract_all(pattern1)
+```"
+"1","[[1]]
+[1] \"Colin\"
+
+[[2]]
+character(0)
+
+[[3]]
+[1] \"Mhairi\" \"Del\"    \"Aileen\" \"Steph\" 
+
+[[4]]
+character(0)
+"

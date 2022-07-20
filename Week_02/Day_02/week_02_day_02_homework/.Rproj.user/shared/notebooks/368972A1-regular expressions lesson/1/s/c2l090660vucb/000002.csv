@@ -1,0 +1,4 @@
+"0","```r
+single_string %>% 
+  str_detect(pattern, negate = TRUE) #this is looking for a pattern, returns answer as a False
+```"

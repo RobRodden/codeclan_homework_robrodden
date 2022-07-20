@@ -1,0 +1,9 @@
+"0","```r
+pattern <- \"[A-Za-Z]\"
+
+strings %>% 
+  str_detect(pattern)
+```"
+"1","Error in stri_detect_regex(string, pattern, negate = negate, opts_regex = opts(pattern)) : 
+  In a character range [x-y], x is greater than y. (U_REGEX_INVALID_RANGE, context=`[A-Za-Z]`)
+"

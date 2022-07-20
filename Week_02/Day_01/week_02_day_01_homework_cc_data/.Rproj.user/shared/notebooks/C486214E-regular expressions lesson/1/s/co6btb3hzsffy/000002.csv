@@ -1,0 +1,9 @@
+"0","```r
+strings %>% 
+  str_detect(pattern2)
+```"
+"1","Warning in stri_detect_regex(string, pattern, negate = negate, opts_regex = opts(pattern)) :
+  longer object length is not a multiple of shorter object length
+"
+"1","[1]  TRUE  TRUE FALSE FALSE FALSE
+"

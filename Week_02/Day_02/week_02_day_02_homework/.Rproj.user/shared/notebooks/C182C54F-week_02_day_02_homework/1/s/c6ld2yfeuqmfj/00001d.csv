@@ -1,0 +1,14 @@
+"0","codeclan_hashtags %>% 
+  str_extract_all(""(?i)edinburgh"")%>% 
+  flatten_chr() %>% 
+length() 
+"
+"2","Warning in stri_extract_all_regex(string, pattern, simplify = simplify,  :"
+"2","
+ "
+"2"," argument is not an atomic vector; coercing
+"
+"1","[1]"
+"1"," 8"
+"1","
+"

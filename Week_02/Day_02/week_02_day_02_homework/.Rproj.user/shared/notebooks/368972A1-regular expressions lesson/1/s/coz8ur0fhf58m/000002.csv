@@ -1,0 +1,6 @@
+"0","```r
+pattern2 <- [\"castle\" | \"Castle\"]
+
+first_string %>% 
+  str_detect(pattern2, negate = TRUE)
+```"

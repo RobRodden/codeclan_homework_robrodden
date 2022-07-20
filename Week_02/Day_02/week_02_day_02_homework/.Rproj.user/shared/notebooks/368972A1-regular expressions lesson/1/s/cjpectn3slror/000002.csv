@@ -1,0 +1,4 @@
+"0","```r
+strings %>% 
+  str_detect(pattern2)
+```"

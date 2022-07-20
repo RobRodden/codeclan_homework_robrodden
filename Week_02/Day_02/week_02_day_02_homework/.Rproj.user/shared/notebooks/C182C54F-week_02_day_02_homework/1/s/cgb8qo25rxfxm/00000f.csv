@@ -1,0 +1,43 @@
+"0","# Q6 "
+"0","code_clan_info <- read_csv(""data/code_clan_info.csv"") %>% clean_names() %>% "
+"0","glimpse()"
+"1","[1mRows: [22m[34m234[39m [1mColumns: [22m[34m15[39m
+"
+"1","[36m──[39m [1mColumn specification[22m [36m──────────────────────────────────────────────────────────────────────────────────────────[39m
+[1mDelimiter:[22m "",""
+[31mchr[39m (7): status_url, name, location, description, url, account_created_at, profile_url
+[32mdbl[39m (6): tweet_id, followers_count, friends_count, listed_count, statuses_count, favourites_count
+[33mlgl[39m (2): protected, verified
+"
+"1","
+[36mℹ[39m Use `spec()` to retrieve the full column specification for this data.
+[36mℹ[39m Specify the column types or set `show_col_types = FALSE` to quiet this message.
+"
+"1","Rows: 234"
+"1",""
+"1","
+"
+"1","Columns: 15"
+"1",""
+"1","
+"
+"1","$ tweet_id           [3m[38;5;246m<dbl>[39m[23m 347, 346, 345, 344, 343, 342, 341, 340, 339, 338, 337, 336, 335, 334, 333, 332, 331, …
+$ status_url         [3m[38;5;246m<chr>[39m[23m ""https://twitter.com/CodeClanScot/status/1131477871397081088"", ""https://twitter.com/C…
+$ name               [3m[38;5;246m<chr>[39m[23m ""CodeClan"", ""CodeClan"", ""CodeClan"", ""CodeClan"", ""CodeClan"", ""CodeClan"", ""CodeClan"", ""…
+$ location           [3m[38;5;246m<chr>[39m[23m ""Edinburgh & Glasgow & Inverness"", ""Edinburgh & Glasgow & Inverness"", ""Edinburgh & Gl…
+$ description        [3m[38;5;246m<chr>[39m[23m ""Change your career through our immersive full time courses or up-skill through our r…
+$ url                [3m[38;5;246m<chr>[39m[23m ""https://t.co/cT46pkkCBO"", ""https://t.co/cT46pkkCBO"", ""https://t.co/cT46pkkCBO"", ""htt…
+$ protected          [3m[38;5;246m<lgl>[39m[23m FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, F…
+$ followers_count    [3m[38;5;246m<dbl>[39m[23m 5835, 5835, 5835, 5835, 5835, 5835, 5835, 5835, 5835, 5835, 5835, 5835, 5835, 5835, 5…
+$ friends_count      [3m[38;5;246m<dbl>[39m[23m 2632, 2632, 2632, 2632, 2632, 2632, 2632, 2632, 2632, 2632, 2632, 2632, 2632, 2632, 2…
+$ listed_count       [3m[38;5;246m<dbl>[39m[23m 119, 119, 119, 119, 119, 119, 119, 119, 119, 119, 119, 119, 119, 119, 119, 119, 119, …
+$ statuses_count     [3m[38;5;246m<dbl>[39m[23m 6103, 6103, 6103, 6103, 6103, 6103, 6103, 6103, 6103, 6103, 6103, 6103, 6103, 6103, 6…
+$ favourites_count   [3m[38;5;246m<dbl>[39m[23m 4443, 4443, 4443, 4443, 4443, 4443, 4443, 4443, 4443, 4443, 4443, 4443, 4443, 4443, 4…
+$ account_created_at [3m[38;5;246m<chr>[39m[23m ""13/05/15 08:21"", ""13/05/15 08:21"", ""13/05/15 08:21"", ""13/05/15 08:21"", ""13/05/15 08:…
+$ verified           [3m[38;5;246m<lgl>[39m[23m FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, F…
+$ profile_url        [3m[38;5;246m<chr>[39m[23m ""https://t.co/cT46pkkCBO"", ""https://t.co/cT46pkkCBO"", ""https://t.co/cT46pkkCBO"", ""htt…"
+"1",""
+"1","
+"
+"0","view(code_clan_info)"
+"0",""

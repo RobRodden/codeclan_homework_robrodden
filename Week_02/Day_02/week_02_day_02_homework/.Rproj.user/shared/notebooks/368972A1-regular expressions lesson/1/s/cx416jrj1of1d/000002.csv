@@ -1,0 +1,6 @@
+"0","```r
+pattern <- \"[abc]\"
+
+strings %>% 
+  str_detect(pattern)
+```"

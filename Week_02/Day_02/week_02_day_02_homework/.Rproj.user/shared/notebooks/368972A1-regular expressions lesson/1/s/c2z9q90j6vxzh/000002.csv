@@ -1,0 +1,11 @@
+"0","```r
+Make a vector containing the following strings:
+\"We're having great fun learning about data analysis at CodeClan!\"
+\"CodeClan is at 37 Castle Terrace in Edinburgh and ClockWise in Glasgow\"
+\"Our cohort code starts with DE or DR\"
+\"You get a great view of the castle or the national conservatoire from just outside CodeClan's door\"
+Write and test regular expressions which will match:
+Any string mentioning CodeClan
+Any string containing two consecutive capital letters
+Any string not including the word \"castle\" or \"Castle\"
+```"

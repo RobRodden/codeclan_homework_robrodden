@@ -1,0 +1,13 @@
+"0","```r
+pattern_1 <- \"[a-z_]+name[a-z_]+\"
+pattern_2 <- \"[a-z_]+town[a-z_]+\"
+
+my_vector1 %>% 
+  str_replace(pattern_1, \"Robert\") %>% 
+  str_replace(pattern_2, \"Glasgow\")
+```"
+"1","[1] \"Colin's mobile number definitely isn't 07777777777.\"   
+[2] \"A landline might be 01010 123456.\"                     
+[3] \"Mhairi, Del, Aileen and Steph helped write these notes\"
+[4] \"I'm called Robert and I live in Glasgow.\"              
+"

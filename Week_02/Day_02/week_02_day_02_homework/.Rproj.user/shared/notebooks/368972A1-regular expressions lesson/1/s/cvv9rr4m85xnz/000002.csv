@@ -1,0 +1,5 @@
+"0","```r
+two_capital_letters <- \"[A-Z]{2}\"
+string_exercise %>%
+  str_detect(two_capital_letters)
+```"

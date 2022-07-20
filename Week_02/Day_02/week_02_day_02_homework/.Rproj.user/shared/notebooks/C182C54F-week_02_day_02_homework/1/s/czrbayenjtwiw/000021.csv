@@ -1,0 +1,8 @@
+"0","# Q2"
+"0",""
+"0","Q2_total_number_of_favourites_exc_quoted <- code_clan_tweets %>% "
+"0","  select(is_quote, favorite_count) %>%"
+"0","  filter(is_quote == FALSE) %>% "
+"0","#  group_by(is_qoute = FALSE) %>% "
+"0","  summarise(sum(favorite_count))"
+"0","Q2_total_number_of_favourites_exc_quoted"

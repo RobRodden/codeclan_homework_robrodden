@@ -1,0 +1,6 @@
+"0","whole_text %>% 
+  str_extract_all(""(?i)big brother"") %>% 
+  flatten_chr()
+"
+"2","Error in flatten_chr(.) : could not find function ""flatten_chr""
+"

@@ -1,0 +1,9 @@
+"0","```r
+pattern <- \"[a-z0-9[:punct:]]+@[a-z[:punct:]]+\"
+
+strings %>% 
+  str_replace_all(pattern, \"REDACTED\")
+```"
+"1","[1] \"This string has REDACTED in it\"      \"This one has REDACTED\"              
+[3] \"Now we've got REDACTED and REDACTED\"
+"

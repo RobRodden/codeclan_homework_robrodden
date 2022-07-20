@@ -1,0 +1,17 @@
+"0","# Q1"
+"0","## reading, cleaning and viewing"
+"0",""
+"0","code_clan_tweets <- read_csv(""data/code_clan_tweets.csv"") %>% clean_names()"
+"1","[1mRows: [22m[34m234[39m [1mColumns: [22m[34m27[39m
+"
+"1","[36m──[39m [1mColumn specification[22m [36m──────────────────────────────────────────────────────────────────────────────────────────[39m
+[1mDelimiter:[22m "",""
+[31mchr[39m (12): created_at, screen_name, text, source, reply_to_screen_name, hashtags, urls_url, urls_t.co, urls_exp...
+[32mdbl[39m (10): tweet_id, user_id, display_text_width, reply_to_status_id, reply_to_user_id, favorite_count, retweet...
+[33mlgl[39m  (5): is_quote, is_retweet, quote_count, reply_count, symbols
+"
+"1","
+[36mℹ[39m Use `spec()` to retrieve the full column specification for this data.
+[36mℹ[39m Specify the column types or set `show_col_types = FALSE` to quiet this message.
+"
+"0","view(code_clan_tweets)"
