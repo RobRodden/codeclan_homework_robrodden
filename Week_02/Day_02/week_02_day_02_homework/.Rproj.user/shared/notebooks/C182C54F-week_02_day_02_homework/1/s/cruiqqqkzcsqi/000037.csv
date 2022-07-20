@@ -1,0 +1,12 @@
+"0","pattern = str_sub(string = ""c\\("", start = 1, end = 2)
+Q8_regexpr_find_symbols %>% 
+  str_extract_all(pattern)
+"
+"2","Warning in stri_extract_all_regex(string, pattern, simplify = simplify,  :"
+"2","
+ "
+"2"," argument is not an atomic vector; coercing
+"
+"2","Error in stri_extract_all_regex(string, pattern, simplify = simplify,  : 
+  Unrecognized backslash escape sequence in pattern. (U_REGEX_BAD_ESCAPE_SEQUENCE, context=`c\`)
+"

@@ -111,14 +111,25 @@ Q6_joining_cctweets_to_ccinfo
 Q7_new_tibble_contain_cclanHashtags_tweetid_lowercase <- select(Q6_joining_cctweets_to_ccinfo, "tweet_id", "hashtags") %>% 
   mutate(hashtags = tolower(hashtags))
 
-codeclan_hashtags
+Q7_new_tibble_contain_cclanHashtags_tweetid_lowercase
 
 ```
 
 ```{r}
 # Q8
-codeclan_hashtags %>% 
-  str_detect("c\\(")
+
+Q8_regexpr_find_symbols <- Q7_new_tibble_contain_cclanHashtags_tweetid_lowercase
+
+Q8_regexpr_find_symbols %>% 
+  #str_detect("c\\(") %>%
+  #str_sub(string = "c\\(", start = 1, end = 2) %>% 
+  str_extract_all("c\\(")
+
+# pattern = str_sub(string = "c\\(", start = 1, end = 2)
+# Q8_regexpr_find_symbols %>% 
+#  str_extract_all(pattern) 
+
+  #str_extract_all("c\\(")
 ```
 
 ```{r}

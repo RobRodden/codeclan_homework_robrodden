@@ -1,0 +1,4 @@
+"0","pattern2 <- [""castle"" | ""Castle""]
+"
+"2","Error: unexpected '[' in ""pattern2 <- [""
+"
