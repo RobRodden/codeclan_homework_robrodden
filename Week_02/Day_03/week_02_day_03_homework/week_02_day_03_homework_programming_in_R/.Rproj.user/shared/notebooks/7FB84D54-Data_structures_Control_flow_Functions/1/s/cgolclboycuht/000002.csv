@@ -1,0 +1,10 @@
+"0","```r
+make_price <- function(x){
+  paste0(\"£\", x)
+}
+  
+
+make_price(10)
+```"
+"1","[1] \"£10\"
+"

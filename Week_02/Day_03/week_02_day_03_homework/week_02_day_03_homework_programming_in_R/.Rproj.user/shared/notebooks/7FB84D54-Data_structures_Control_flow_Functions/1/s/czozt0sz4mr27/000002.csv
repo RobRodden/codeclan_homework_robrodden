@@ -1,0 +1,5 @@
+"0","```r
+function_name <- function(par_1, par_2 = NULL, par_3 = default value){
+```"
+"1","Error: unexpected symbol in \"function_name <- function(par_1, par_2 = NULL, par_3 = default value\"
+"

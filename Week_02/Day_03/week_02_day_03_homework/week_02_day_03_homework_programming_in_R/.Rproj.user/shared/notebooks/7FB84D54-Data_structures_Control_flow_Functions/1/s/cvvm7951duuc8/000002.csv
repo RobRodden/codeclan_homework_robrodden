@@ -1,0 +1,14 @@
+"0","```r
+m <- matrix(1:12, 4)
+nrows <- nrow(m)
+ncols <- ncol(m)
+
+for (row_i in 1:nrows){
+  print(m[row_i, ])
+}
+```"
+"1","[1] 1 5 9
+[1]  2  6 10
+[1]  3  7 11
+[1]  4  8 12
+"

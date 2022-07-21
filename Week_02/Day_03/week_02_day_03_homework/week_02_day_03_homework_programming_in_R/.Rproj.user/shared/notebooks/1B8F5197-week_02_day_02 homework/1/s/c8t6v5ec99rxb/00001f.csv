@@ -1,0 +1,91 @@
+"0","weather_forecast_for_next_3_days <- list(
+                                        ""Thursday"" = list(Temp = ""15"", ChanceOfRain = ""11%"", WindSpeed = ""6""),
+                                        ""Friday"" = list(Temp = ""18"", ChanceOfRain = ""43%"", WindSpeed = ""7""),
+                                        ""Saturday"" = list(Temp = ""19"", ChanceOfRain = ""92%"", WindSpeed = ""13"")
+                                        )
+weather_forecast_for_next_3_days
+"
+"1","$Thursday
+"
+"1","$Thursday$Temp
+"
+"1","[1]"
+"1"," ""15"""
+"1","
+"
+"1","
+"
+"1","$Thursday$ChanceOfRain
+"
+"1","[1]"
+"1"," ""11%"""
+"1","
+"
+"1","
+"
+"1","$Thursday$WindSpeed
+"
+"1","[1]"
+"1"," ""6"""
+"1","
+"
+"1","
+"
+"1","
+"
+"1","$Friday
+"
+"1","$Friday$Temp
+"
+"1","[1]"
+"1"," ""18"""
+"1","
+"
+"1","
+"
+"1","$Friday$ChanceOfRain
+"
+"1","[1]"
+"1"," ""43%"""
+"1","
+"
+"1","
+"
+"1","$Friday$WindSpeed
+"
+"1","[1]"
+"1"," ""7"""
+"1","
+"
+"1","
+"
+"1","
+"
+"1","$Saturday
+"
+"1","$Saturday$Temp
+"
+"1","[1]"
+"1"," ""19"""
+"1","
+"
+"1","
+"
+"1","$Saturday$ChanceOfRain
+"
+"1","[1]"
+"1"," ""92%"""
+"1","
+"
+"1","
+"
+"1","$Saturday$WindSpeed
+"
+"1","[1]"
+"1"," ""13"""
+"1","
+"
+"1","
+"
+"1","
+"

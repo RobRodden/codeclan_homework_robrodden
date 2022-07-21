@@ -1,0 +1,27 @@
+"0","```r
+example_matrix = matrix(1:25, nrow = 5, ncol = 5)
+example_matrix
+
+```"
+"1","     [,1] [,2] [,3] [,4] [,5]
+[1,]    1    6   11   16   21
+[2,]    2    7   12   17   22
+[3,]    3    8   13   18   23
+[4,]    4    9   14   19   24
+[5,]    5   10   15   20   25
+"
+"0","```r
+for (row_index in 1:5){
+  for(col_index in 1:5){
+    if(row_index == col_index){
+      print(example_matrix[row_index, col_index])
+    }
+  }
+}
+```"
+"1","[1] 1
+[1] 7
+[1] 13
+[1] 19
+[1] 25
+"

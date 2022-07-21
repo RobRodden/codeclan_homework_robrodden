@@ -1,0 +1,23 @@
+"0","```r
+tri_nos(4)
+
+```"
+"1","debugging in: tri_nos(4)
+debug at #1: {
+    n_plus1 <- n + 1
+    numerator <- n * n_plus1
+    denominator <- 2
+    t <- numerator/denominator
+    list(total = t, n = n)
+}
+"
+"0","```r
+c
+```"
+"1","exiting from: tri_nos(4)
+$total
+[1] 10
+
+$n
+[1] 4
+"

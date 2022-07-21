@@ -1,0 +1,4 @@
+"0","colnames(m) <- paste0(""col_"", 1:3)
+"
+"2","Error in colnames(m) <- paste0(""col_"", 1:3) : object 'm' not found
+"

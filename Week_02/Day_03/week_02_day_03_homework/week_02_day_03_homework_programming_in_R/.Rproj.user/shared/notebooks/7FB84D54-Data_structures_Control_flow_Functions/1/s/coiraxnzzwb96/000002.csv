@@ -1,0 +1,13 @@
+"0","```r
+weekdays <- c(\"Monday\", \"Tuesday\", \"Wednes\", \"T\", \"F\")
+
+weekdays
+
+```"
+"1","[1] \"Monday\"  \"Tuesday\" \"Wednes\"  \"T\"       \"F\"      
+"
+"0","```r
+paste0(weekdays, \"s\")
+```"
+"1","[1] \"Mondays\"  \"Tuesdays\" \"Wedness\"  \"Ts\"       \"Fs\"      
+"

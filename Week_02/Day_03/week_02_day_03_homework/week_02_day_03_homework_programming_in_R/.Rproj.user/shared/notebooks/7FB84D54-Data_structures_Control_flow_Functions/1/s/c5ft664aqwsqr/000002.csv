@@ -1,0 +1,6 @@
+"0","```r
+class(my_named_list2[[\"b\"]])
+
+```"
+"1","[1] \"numeric\"
+"
