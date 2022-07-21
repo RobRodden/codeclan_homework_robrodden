@@ -1,0 +1,11 @@
+"0","is_value_greater_less_than_10 <- function(x){"
+"0","if (x < 10){"
+"0","    output <- x"
+"0","} else if (x > 10){"
+"0","  output <- x / 10"
+"0","} else {"
+"0","    print(""The answer is"" x)"
+"2","Error: unexpected symbol in:
+""} else {
+    print(""The answer is"" x""
+"
