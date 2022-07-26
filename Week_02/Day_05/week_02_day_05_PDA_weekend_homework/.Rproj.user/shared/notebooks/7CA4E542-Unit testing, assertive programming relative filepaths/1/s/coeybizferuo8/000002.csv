@@ -1,0 +1,6 @@
+"0","```r
+library(tidyverse)
+weather_one <- read.csv(\"data/delhi_weather_one.csv\")
+
+weather_one
+```"

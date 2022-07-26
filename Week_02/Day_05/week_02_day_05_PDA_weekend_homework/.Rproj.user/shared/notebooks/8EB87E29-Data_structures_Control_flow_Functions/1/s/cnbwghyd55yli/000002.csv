@@ -1,0 +1,31 @@
+"0","```r
+weekdays
+```"
+"1","[1] \"Monday\"    \"Tuesday\"   \"Wednesday\" \"Thursday\"  \"Friday\"   
+"
+"0","```r
+len_weekdays <- length(weekdays)
+
+for (d in weekdays){
+  phrase <- paste(\"the day is\", day)
+  print(phrase)
+}
+```"
+"1","[1] \"the day is Monday\"
+[1] \"the day is Monday\"
+[1] \"the day is Monday\"
+[1] \"the day is Monday\"
+[1] \"the day is Monday\"
+"
+"0","```r
+for (i in 1:len_weekdays){
+  phrase <- paste(\"the day is\", weekdays[i])
+  print(phrase)
+}
+```"
+"1","[1] \"the day is Monday\"
+[1] \"the day is Tuesday\"
+[1] \"the day is Wednesday\"
+[1] \"the day is Thursday\"
+[1] \"the day is Friday\"
+"

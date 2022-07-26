@@ -1,0 +1,18 @@
+"0","```r
+# library(stringr)
+# pattern <- \"^[a-z]+[a-zA-z]*\"
+
+# here is where we remove supperflous data and 
+# pattern2 <- \"_\"
+pattern <- \"^[a-z]+[:punct:]+[a-z]+\"
+
+diet_comp_clean <- diet_comp_clean %>% 
+  mutate(kcal_source = str_extract_all(kcal_source, pattern)) %>% 
+  rename(\"country\" = \"entity\")
+
+# diet_comp_clean <- diet_comp_clean %>%
+  # mutate(kcal_source_new = str_replace_all(kcal_source, pattern2, \" \"))
+# here is where we summarise the missing data
+diet_comp_clean %>% 
+  summarise(across(.fns = ~ sum(is.na(.x))))
+```"

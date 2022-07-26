@@ -1,0 +1,16 @@
+"0","inputdatafram <- dataframe_year_meteorites"
+"0","year <- 9"
+"0",""
+"0","get_meteorite_count <- function(inputdatafram, year){"
+"0","  "
+"0","  if (year == inputdatafram){ # this section here test whether the input year is contained within the dataframe"
+"0","  for (yearindataframe in inputdatafram){ # to cycle through the dataframe   "
+"0","    answer = colSums(inputdatafram,) # if the test is true this will sum the relevant column"
+"0","    paste0(""In "", year, ""there were "", answer, ""meteorites"", sep = "" "") # return the answer via a paste0 "
+"0","  }"
+"0","  }  "
+"0","} else {"
+"2","Error: unexpected 'else' in:
+""  }  
+} else""
+"

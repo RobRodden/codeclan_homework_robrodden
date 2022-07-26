@@ -1,0 +1,5 @@
+"0","tidy_meteorite_landings_data %>% "
+"0","  janitor::clean_names() %>% "
+"0","  select(fall, mass_g) %>% "
+"0","  group_by(fall) %>% "
+"0","  summarise(avg_mass = mean(mass_g))"

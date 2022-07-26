@@ -1,0 +1,8 @@
+"0","```r
+multiply_by_5 <- function(x){
+  x * 5
+}
+multiply_by_5(2)
+```"
+"1","[1] 10
+"

@@ -1,0 +1,15 @@
+"0","```r
+stock_price <- 50
+
+if (stock_price > 50){
+  do_what <- \"Don't Buy\"
+} else if (stock_price > 20){
+  do_what <- \"Buy 1\"
+} else {
+  do_what <- \"Buy 2\"
+}
+
+do_what
+```"
+"1","[1] \"Buy 1\"
+"

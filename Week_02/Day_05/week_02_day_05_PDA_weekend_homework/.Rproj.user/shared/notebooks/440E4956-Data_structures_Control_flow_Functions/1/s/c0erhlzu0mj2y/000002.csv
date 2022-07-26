@@ -1,0 +1,8 @@
+"0","```r
+my_vector <- c(1, 4, 6, 2, 4)
+temp_vector <- numeric(length(my_vector))
+
+for (index in 1:length(my_vector)){
+  temp_vector[index] <- my_vector[index] + 1
+}
+```"

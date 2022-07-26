@@ -1,0 +1,14 @@
+"0","```r
+multiply_by <- function(x, y = 3){
+  z <- x * y
+  z
+}
+multiply_by(x = 2)
+```"
+"1","[1] 6
+"
+"0","```r
+z
+```"
+"1","Error: object 'z' not found
+"

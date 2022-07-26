@@ -1,0 +1,7 @@
+"0","meteorite_landings_assertr_check <- function(meteorite_landings_lat_long_test){"
+"0","# to check that latitude and longitude data don't have any unusual data."
+"0","tidy_meteorite_landings_data %>%"
+"0","    verify(latitude >= -90 & latitude <= 90) %>% "
+"0","    verify(longitude >= -180 & longitude <= 180)"
+"0","}"
+"0","meteorite_landings_assertr_check(tidy_meteorite_landings_data)"

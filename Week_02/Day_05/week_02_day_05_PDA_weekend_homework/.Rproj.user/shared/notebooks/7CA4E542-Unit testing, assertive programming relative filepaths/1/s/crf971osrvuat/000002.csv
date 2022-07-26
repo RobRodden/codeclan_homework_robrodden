@@ -1,0 +1,8 @@
+"0","```r
+expect_equal(a, 11)
+
+```"
+"1","Error: `a` not equal to 11.
+1/1 mismatches
+[1] 10 - 11 == -1
+"

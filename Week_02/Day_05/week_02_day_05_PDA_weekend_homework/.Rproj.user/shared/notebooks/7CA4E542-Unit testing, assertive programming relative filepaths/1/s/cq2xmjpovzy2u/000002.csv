@@ -1,0 +1,8 @@
+"0","```r
+test_that(\"Real leap years return TRUE\", {
+  expect_equal(is_leap_year(2020), TRUE)
+  expect_equal(is_leap_year(2000), TRUE)
+})
+```"
+"1","Test passed 🎉
+"

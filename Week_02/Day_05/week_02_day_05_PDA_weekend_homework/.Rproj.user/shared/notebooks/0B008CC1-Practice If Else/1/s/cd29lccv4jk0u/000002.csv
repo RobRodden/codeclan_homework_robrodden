@@ -1,0 +1,15 @@
+"0","```r
+check_same <- function(x, y){
+  if(all(x == y)) { # test if all elements are equal and in the same order
+    output <- \"Exactly the same\"
+  } else {
+    if(all(sort(x) == sort(y))) { # test if values are equal but in different order
+      output <- \"The same\"
+    } else {
+      output <- \"Different\"
+    }
+  }
+  output
+}
+
+```"

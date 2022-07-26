@@ -1,0 +1,8 @@
+"0","```r
+for (day in weekdays){
+  print(paste(\"the day is\"), day))
+```"
+"1","Error: unexpected ')' in:
+\"for (day in weekdays){
+  print(paste(\"the day is\"), day))\"
+"

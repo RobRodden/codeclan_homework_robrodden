@@ -1,0 +1,10 @@
+"0","```r
+test_that(\"Character input returns an error\", {
+  expect_error(is_leap_year(2010))
+})
+```"
+"1","── Failure (Line 2): Character input returns an error ──────────────────────────
+`is_leap_year(2010)` did not throw an error.
+"
+"1","Error in reporter$stop_if_needed() : Test failed
+"

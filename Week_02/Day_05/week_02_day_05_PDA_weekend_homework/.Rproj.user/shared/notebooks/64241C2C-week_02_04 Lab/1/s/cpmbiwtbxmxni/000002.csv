@@ -1,0 +1,50 @@
+"0","```r
+
+library(tidyverse)
+library(janitor)
+
+dietary_composition_by_country <- read_csv(\"data/dietary-composition-by-country.csv\") %>% clean_names()
+```"
+"1","Rows: 8981 Columns: 28
+── Column specification ───────────────────────────────────────────────────────────────────────────────────────────
+Delimiter: \",\"
+chr  (2): Entity, Code
+dbl (26): Year, Alcoholic Beverages (FAO (2017)), Animal fats (FAO (2017)), Barley (FAO (2017)), Bovine Meat (F...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+"
+"0","```r
+view(dietary_composition_by_country)
+names(dietary_composition_by_country)
+```"
+"1"," [1] \"entity\"                       \"code\"                         \"year\"                        
+ [4] \"alcoholic_beverages_fao_2017\" \"animal_fats_fao_2017\"         \"barley_fao_2017\"             
+ [7] \"bovine_meat_fao_2017\"         \"cereals_other_fao_2017\"       \"eggs_fao_2017\"               
+[10] \"fish_seafood_fao_2017\"        \"fruit_fao_2017\"               \"maize_fao_2017\"              
+[13] \"meat_other_fao_2017\"          \"milk_fao_2017\"                \"miscellaneous_fao_2017\"      
+[16] \"mutton_goat_meat_fao_2017\"    \"oilcrops_fao_2017\"            \"pigmeat_fao_2017\"            
+[19] \"poultry_meat_fao_2017\"        \"pulses_fao_2017\"              \"rice_fao_2017\"               
+[22] \"starchy_roots_fao_2017\"       \"sugar_sweeteners_fao_2017\"    \"sugar_crops_fao_2017\"        
+[25] \"nuts_seeds_fao_2017\"          \"vegetable_oils_fao_2017\"      \"vegetables_fao_2017\"         
+[28] \"wheat_fao_2017\"              
+"
+"0","```r
+glimpse(diet_comp_clean)
+```"
+"1","Rows: 215,544
+Columns: 6
+$ entity                       <chr> \"Afghanistan\", \"Afghanistan\", \"Afghanistan\", \"Afghanistan\", \"Afghanistan\", \"…
+$ code                         <chr> \"AFG\", \"AFG\", \"AFG\", \"AFG\", \"AFG\", \"AFG\", \"AFG\", \"AFG\", \"AFG\", \"AFG\", \"AFG\",…
+$ year                         <dbl> 1961, 1961, 1961, 1961, 1961, 1961, 1961, 1961, 1961, 1961, 1961, 1961, 1961…
+$ alcoholic_beverages_fao_2017 <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…
+$ kcal_source                  <chr> \"animal_fats_fao_2017\", \"barley_fao_2017\", \"bovine_meat_fao_2017\", \"cereals_…
+$ avg_daily_kcals              <dbl> 47, 237, 28, 16, 4, 0, 60, 380, 3, 98, 0, 55, 17, NA, 2, 16, 209, 25, 51, NA…
+"
+"0","```r
+diet_comp_clean <- pivot_longer(dietary_composition_by_country, c(animal_fats_fao_2017:wheat_fao_2017), 
+                                names_to = \"kcal_source\",
+                                                                           values_to = \"avg_daily_kcals\")
+
+view(diet_comp_clean)
+```"

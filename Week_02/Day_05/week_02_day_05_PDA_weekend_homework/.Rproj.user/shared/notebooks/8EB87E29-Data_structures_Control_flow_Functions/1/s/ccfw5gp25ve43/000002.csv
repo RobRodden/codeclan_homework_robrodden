@@ -1,0 +1,9 @@
+"0","```r
+x <- 10
+y <- 5:20
+
+if(x < y) {# then
+  print(\"yes\")}
+```"
+"1","Error in if (x < y) { : the condition has length > 1
+"

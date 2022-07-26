@@ -1,0 +1,2 @@
+"0","# meteorite_landings_rename_columns <- rename(meteorite_landings, ""GeoLocation"" = ""geo_location"")"
+"0","# meteorite_landings_rename_columns"

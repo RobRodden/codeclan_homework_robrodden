@@ -1,0 +1,20 @@
+"0","```r
+#1 - same values, same order - expected output - \"Exactly the same\"
+v1 <- c(1, 2, 3)
+v2 <- c(1, 2, 3)
+
+check_same(v1, v2)
+
+#2 - same values, different order - expected output - \"The same\"
+v1 <- c(1, 2, 3)
+v2 <- c(3, 2, 1)
+
+check_same(v1, v2)
+
+#3 - different values, regardless of order - expected output - \"Different\"
+v1 <- c(1, 2, 3)
+v2 <- c(1, 2, 4)
+
+check_same(v1, v2)
+
+```"

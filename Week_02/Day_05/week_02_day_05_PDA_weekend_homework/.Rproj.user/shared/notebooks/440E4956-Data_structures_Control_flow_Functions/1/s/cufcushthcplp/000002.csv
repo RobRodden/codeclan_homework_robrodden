@@ -1,0 +1,5 @@
+"0","```r
+paste0(\"Today is \", weekdays)
+```"
+"1","[1] \"Today is Monday\"  \"Today is Tuesday\" \"Today is Wednes\"  \"Today is T\"       \"Today is F\"      
+"

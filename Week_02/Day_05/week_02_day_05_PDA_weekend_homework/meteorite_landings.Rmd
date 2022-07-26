@@ -1,0 +1,115 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+# loading in any relevant packages and data and read relevant meta data - this will including cleaning headings using janitor.  I will also run an initial view of the data so that I can cast my eye over it.
+```{r}
+library(tidyverse)
+library(janitor)
+
+meteorite_landings <- read_csv("data/meteorite_landings.csv") #%>% clean_names() I had initally tried using 'clean_names' but it was messing up my column names with regards to the 
+
+glimpse(meteorite_landings)
+View(meteorite_landings)
+```
+
+```{r}
+# meteorite_landings_rename_columns <- rename(meteorite_landings, "GeoLocation" = "geo_location")
+# meteorite_landings_rename_columns
+```
+
+```{r}
+tidy_meteorite_landings_data <- meteorite_landings %>%
+  mutate(GeoLocation = str_remove_all(GeoLocation, "[()]")) %>% # here is where the brackets are removed
+  separate(GeoLocation, c("latitude", "longitude"), ", ") %>% # split the column GeoLocation out into latitude and longitude
+  mutate(latitude = as.numeric(latitude), longitude = as.numeric(longitude), # change the format of latitude and longitude columns from character to numeric
+         latitude = coalesce(latitude, 0, na.rm = TRUE), # replacing any missing values in latitude with 0
+         longitude = coalesce(longitude, 0, na.rm = TRUE)) %>% # replacing any missing values in longitude with 0
+  filter(`mass (g)` >= 1000) %>% # removing any meteorites whose mass "(g)" is less than 1000g
+  arrange(year) # arrange the data in ascending order by year of discovery
+
+tidy_meteorite_landings_data
+```
+
+```{r}
+tidy_meteorite_landings_data %>% 
+  summarise(across(.fns = ~ sum(is.na(.x))))
+```
+
+```{r}
+library(assertr) # loading the assertr package to do so assertive program checking
+
+# to check that the column names are the same as we expect
+tidy_meteorite_landings_data %>% 
+    verify(has_all_names("id", "name", "mass (g)", "fall", "year", "latitude", "longitude"))
+
+```
+
+```{r}
+meteorite_landings_assertr_check <- function(meteorite_landings_lat_long_test){
+# to check that latitude and longitude data don't have any unusual data.
+tidy_meteorite_landings_data %>%
+    verify(latitude >= -90 & latitude <= 90) %>% 
+    verify(longitude >= -180 & longitude <= 180)
+}
+meteorite_landings_assertr_check(tidy_meteorite_landings_data)
+```
+```{r}
+# this is to identify the names and years of the 10 largest meteorites within the data 
+tidy_meteorite_landings_data %>%
+  janitor::clean_names() %>% # here i'm calling janitor because "mass (g)" causes conflicts / problems - this cleans the name for use below.
+    select(name, year, mass_g) %>% 
+  slice_max(mass_g, n = 10) %>% # this will give us the top 10 meteorites 
+  arrange(desc(mass_g))
+```
+```{r}
+tidy_meteorite_landings_data %>% 
+  janitor::clean_names() %>% 
+  select(fall, mass_g) %>% 
+  group_by(fall) %>% 
+  summarise(avg_mass = mean(mass_g))
+  
+```
+
+```{r}
+tidy_meteorite_landings_data %>% 
+  select(year) %>% 
+  filter(year >= 2000) %>% 
+  group_by(year) %>% 
+  summarise(number_per_year = sum(year))
+
+```
+
+```{r}
+dataframe_year_meteorites <- matrix(1:10, nrow = 5, ncol = 2)
+colnames(dataframe_year_meteorites) <- paste0("col_", c("year","number"))
+rownames(dataframe_year_meteorites) <- paste0("row_", c("2000", "2001", "2002", "2003", "2004"))
+
+dataframe_year_meteorites
+
+```
+
+```{r}
+inputdatafram <- dataframe_year_meteorites
+year <- 9
+
+get_meteorite_count <- function(inputdatafram, year){
+  
+  if (year == inputdatafram){ # this section here test whether the input year is contained within the dataframe
+  for (yearindataframe in inputdatafram){ # to cycle through the dataframe   
+    answer = colSums(inputdatafram,) # if the test is true this will sum the relevant column
+    paste0("In ", year, "there were ", answer, "meteorites", sep = " ") # return the answer via a paste0 
+  }
+  }  
+} else {
+  print("as far as we know, there were no meteorites that year") # logical test to see 
+} 
+
+
+get_meteorite_count(inputdatafram, year)
+
+
+# if(row_index == col_index){
+#      print(example_matrix[row_index, col_index])
+```
+

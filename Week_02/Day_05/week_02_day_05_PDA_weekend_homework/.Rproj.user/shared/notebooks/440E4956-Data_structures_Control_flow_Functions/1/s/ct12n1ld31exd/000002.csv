@@ -1,0 +1,7 @@
+"0","```r
+x <- 3
+
+if(x %% 2 == 0){print(\"yes, that divides by 2\")} else {print(\"no\")}
+```"
+"1","[1] \"no\"
+"

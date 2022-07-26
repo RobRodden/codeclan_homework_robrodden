@@ -1,0 +1,5 @@
+"0","library(assertr) # loading the assertr package to do so assertive program checking"
+"0",""
+"0","# to check that the column names are the same as we expect"
+"0","tidy_meteorite_landings_data %>% "
+"0","    verify(has_all_names(""id"", ""name"", ""mass (g)"", ""fall"", ""year"", ""latitude"", ""longitude""))"

@@ -1,0 +1,6 @@
+"0","```r
+cc_info_subset[row_nums, col_ids]
+
+```"
+"1","Error: object 'cc_info_subset' not found
+"

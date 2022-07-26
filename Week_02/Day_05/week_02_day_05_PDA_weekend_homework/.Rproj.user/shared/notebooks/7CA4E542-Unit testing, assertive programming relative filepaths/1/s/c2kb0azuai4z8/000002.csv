@@ -1,0 +1,23 @@
+"0","```r
+is_leap_year <- function(year){
+  #add in condition for non numeric data
+  if (!is.numeric(year)) {
+    stop(\"Non-numeric input :(\")
+  }
+    
+  if (year %% 100 == 0){
+      if (year %% 400 == 0){
+        return(TRUE)
+      } else {
+        return(FALSE)
+      }
+  }
+
+
+if (year %% 4 == 0){
+  return(TRUE){
+```"
+"1","Error: unexpected '{' in:
+\"if (year %% 4 == 0){
+  return(TRUE){\"
+"

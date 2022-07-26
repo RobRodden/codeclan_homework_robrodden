@@ -1,0 +1,12 @@
+"0","```r
+example_matrix = matrix(1:25, nrow = 5, ncol = 5)
+example_matrix 
+
+for (row_index in 1:5){
+  for (col_index in 1:5){
+    if (row_index == col_index){
+      print(example_matrix[row_index, col_index])
+    }
+   }
+}
+```"

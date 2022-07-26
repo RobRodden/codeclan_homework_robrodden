@@ -1,0 +1,5 @@
+"0","tidy_meteorite_landings_data %>%"
+"0","  janitor::clean_names() %>% "
+"0","    select(name, year, mass_g) %>% "
+"0","  slice_max(mass_g, n = 10) %>% "
+"0","  arrange(desc(mass_g))"

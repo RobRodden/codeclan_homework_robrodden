@@ -1,0 +1,17 @@
+"0","```r
+
+n <- 8
+multiply_by_n <- function(x, n){
+  ans <- x * n
+  if(ans %% 2 == 1){
+    z <- (paste(\"x is odd\"))
+  } else{
+    z <- (paste(\"x is even\"))
+  }
+  z
+}
+
+multiply_by_n(3, 3)
+```"
+"1","[1] \"x is odd\"
+"

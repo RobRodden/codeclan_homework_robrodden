@@ -1,0 +1,9 @@
+"0","```r
+x <- 11
+y <- 10:15
+
+if(x %in% y) {# then
+  print(\"yes\")} else {print(\"no\")}
+```"
+"1","[1] \"yes\"
+"

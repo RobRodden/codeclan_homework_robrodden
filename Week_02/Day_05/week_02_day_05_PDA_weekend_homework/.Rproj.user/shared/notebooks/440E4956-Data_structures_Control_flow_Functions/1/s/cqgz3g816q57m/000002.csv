@@ -1,0 +1,15 @@
+"0","```r
+\"nchar\"
+
+\"nchar(x, type = \"chars\", allowNA = FALSE, keepNA = NA)\"
+
+x 
+
+nchar(\"hello\", \"chars\", TRUE, NA)
+nchar(\"chars\", TRUE, , \"hello\", NA)
+nchar(\"chars\", TRUE, x = \"hello\", NA)
+
+
+data %>% 
+  select(.data = .)
+```"

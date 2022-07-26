@@ -1,0 +1,9 @@
+"0","```r
+weekdays <- c(\"Monday\", \"Tuesday\", \"Wednesday\", \"Thursday\", \"Friday\")
+
+for (day in weekdays) {
+  browser()
+  phrase <- paste(\"the day is\", day)
+  print(phrase)
+}
+```"
