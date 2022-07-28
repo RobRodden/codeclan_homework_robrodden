@@ -51,3 +51,5 @@ meteorite_landings_assertr_check <- function(meteorite_landings_lat_long_test){
     verify(longitude >= -180 & longitude <= 180)
 }
 meteorite_landings_assertr_check(tidy_meteorite_landings_data) # here we load the data into the function
+
+write_csv("")
